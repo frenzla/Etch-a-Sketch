@@ -1,13 +1,19 @@
 .container {
+    display: flex;
     margin: 0 auto;
     width: 400px;
     height: 400px;
-    border: solid 1px green;
-    color: purple;
+    border: solid 1px black;
+    flex-direction: column;
 }
 
-.block {
+.blockO {
+    flex: auto;
+    border: solid 1px blue;
+}
+
+.blockV {
+    flex: auto;
     border: solid 1px red;
-    width: 200px;
-    height: 200px;
+    display: flex;
 }
