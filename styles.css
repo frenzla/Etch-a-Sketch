@@ -7,6 +7,14 @@
     flex-direction: column;
 }
 
+.divBtn {
+    display: flex;
+}
+
+.btn {
+    margin: 20px auto;
+}
+
 .blockO {
     flex: auto;
     border: solid 1px blue;
