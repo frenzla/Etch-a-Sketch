@@ -22,6 +22,16 @@ function createGrid() {
 
 createGrid();
 
+//Change class when hovering
+const divs = document.querySelectorAll('div.blockO');
+let clickEvent = () => {
+    const classes = event.target.classList;
+    classes.add("divHover");
+}
+divs.forEach((item) => {
+    item.addEventListener('mouseenter', clickEvent)
+});
+
 //get width of container
 const containerWidth = parseInt((window.getComputedStyle(document.querySelector('div.container')).getPropertyValue("width")),10);
 
