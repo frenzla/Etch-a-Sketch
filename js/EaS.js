@@ -57,7 +57,15 @@ function recreateGrid() {
 function addHoverEffect() {
     const divs = document.querySelectorAll('div.blockO');
     let clickEvent = () => {
-        event.target.style.background = getRandomRGB();
+        if (event.target.style.background === "") {
+            event.target.style.background = getRandomRGB();
+            event.target.style.filter = "brightness(100%)";
+        } else {
+            let brightness = event.target.style.filter;
+            modifBright = Number(brightness.slice(11,-2));
+            modifBright -= 10;
+            event.target.style.filter = (`brightness(${modifBright}%`);
+        }
     }
     divs.forEach((item) => {
         item.addEventListener('mouseenter', clickEvent)
@@ -73,7 +81,6 @@ function getRandomRGB() {
     let y = getRandomInt(256);
     let z = getRandomInt(256);
     var RGBColor = "rgb(" + x + "," + y + "," + z + ")";
-    console.log(RGBColor);
     return RGBColor;
 }
 
