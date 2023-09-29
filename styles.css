@@ -17,7 +17,7 @@
 
 .blockO {
     flex: auto;
-    border: solid 1px blue;
+    /* border: solid 1px blue; */
 }
 
 .divHover {
@@ -26,6 +26,6 @@
 
 .blockV {
     flex: auto;
-    border: solid 1px red;
+    /* border: solid 1px red; */
     display: flex;
 }

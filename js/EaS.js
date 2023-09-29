@@ -11,7 +11,8 @@ const button = document.querySelector('.btn');
 button.addEventListener('click', inputNbSquares);
 
 function inputNbSquares (e) {
-    nbSquares = Number(window.prompt("How many squares per side do you want?", "16"));
+    nbSquares = Number(window.prompt("How many squares per side do you want? (Max 100)", "16"));
+    checkGridLimit();
     recreateGrid();
     addHoverEffect();
 }
@@ -30,6 +31,15 @@ function createGrid() {
             blockV.appendChild(blockO);
         }
 
+    }
+}
+
+function checkGridLimit() {
+    if (nbSquares>100) {
+    do {
+        nbSquares = Number(window.prompt("That's too much! Try again! How many squares per side do you want? (Max 100)", "16"))
+    }
+    while (nbSquares>100);
     }
 }
 
