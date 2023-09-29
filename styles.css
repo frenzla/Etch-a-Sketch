@@ -17,15 +17,9 @@
 
 .blockO {
     flex: auto;
-    /* border: solid 1px blue; */
-}
-
-.divHover {
-    background-color: purple;
 }
 
 .blockV {
     flex: auto;
-    /* border: solid 1px red; */
     display: flex;
 }

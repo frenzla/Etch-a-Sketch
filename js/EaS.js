@@ -9,7 +9,6 @@ addHoverEffect();
 //Add button behavior
 const button = document.querySelector('.btn');
 button.addEventListener('click', inputNbSquares);
-
 function inputNbSquares (e) {
     nbSquares = Number(window.prompt("How many squares per side do you want? (Max 100)", "16"));
     checkGridLimit();
@@ -34,6 +33,7 @@ function createGrid() {
     }
 }
 
+//Check if input for grid<100
 function checkGridLimit() {
     if (nbSquares>100) {
     do {
@@ -57,15 +57,25 @@ function recreateGrid() {
 function addHoverEffect() {
     const divs = document.querySelectorAll('div.blockO');
     let clickEvent = () => {
-        const classes = event.target.classList;
-        classes.add("divHover");
+        event.target.style.background = getRandomRGB();
     }
     divs.forEach((item) => {
         item.addEventListener('mouseenter', clickEvent)
     });
 }
 
+//Get a random color for hover
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+function getRandomRGB() {
+    let x = getRandomInt(256);
+    let y = getRandomInt(256);
+    let z = getRandomInt(256);
+    var RGBColor = "rgb(" + x + "," + y + "," + z + ")";
+    console.log(RGBColor);
+    return RGBColor;
+}
+
 //get width of container
 const containerWidth = parseInt((window.getComputedStyle(document.querySelector('div.container')).getPropertyValue("width")),10);
-
-
